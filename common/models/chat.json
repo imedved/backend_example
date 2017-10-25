@@ -1,0 +1,47 @@
+{
+  "name": "chat",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "creatorHasUnreadMessages": {
+      "type": "boolean",
+      "required": true
+    },
+    "opponentHasUnreadMessages": {
+      "type": "boolean",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "message",
+      "foreignKey": ""
+    },
+    "creator": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "opponent": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

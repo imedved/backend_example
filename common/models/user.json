@@ -1,0 +1,127 @@
+{
+  "name": "user",
+  "base": "PersistedModel",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "generated": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "isMoving": {
+      "type": "boolean",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": false
+    },
+    "moveInDate": {
+      "type": "date",
+      "required": false
+    },
+    "relationsLastUpdate": {
+      "type": "date",
+      "required": false
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "hidden": [
+    "relationsLastUpdate"
+  ],
+  "validations": [],
+  "relations": {
+    "tags": {
+      "type": "hasAndBelongsToMany",
+      "model": "tag",
+      "foreignKey": ""
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": ""
+    },
+    "setting": {
+      "type": "hasOne",
+      "model": "setting",
+      "foreignKey": ""
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "city",
+      "foreignKey": ""
+    },
+    "apartment": {
+      "type": "hasOne",
+      "model": "apartment",
+      "foreignKey": ""
+    },
+    "avatar": {
+      "type": "hasOne",
+      "model": "image",
+      "foreignKey": "avatarId"
+    },
+    "location": {
+      "type": "hasOne",
+      "model": "location",
+      "foreignKey": "",
+      "scope": {
+        "where": {
+          "type": "PERSON"
+        }
+      }
+    },
+    "relations": {
+      "type": "hasMany",
+      "model": "relation",
+      "foreignKey": "objectId"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "foreignKey": ""
+    },
+    "newsfeeds": {
+      "type": "hasMany",
+      "model": "newsfeed",
+      "foreignKey": "creatorId"
+    },
+    "profileImages": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": "",
+      "scope": {
+        "where": {
+          "messageId": "",
+          "newsfeedId": "",
+          "apartmentId": ""
+        }
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image uploading</title>
+    <style>
+        body {
+            padding: 10px 0 0 30px;
+        }
+
+        #token {
+            margin-left: 10px;
+            width: 500px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<h2>Image upload</h2>
+<label>Token: <input type="text" name="token" id="token"></label><br>
+<label>Width: <input type="text" name="width" id="width"></label><br>
+<label>Height: <input type="text" name="height" id="height"></label><br>
+<label>Order: <input type="text" name="order" id="order"></label><br>
+<label>avatarId: <input type="text" name="avatarId" id="avatarId"></label><br>
+<label>apartmentId: <input type="text" name="apartmentId" id="apartmentId"></label><br>
+<label>messageId: <input type="text" name="messageId" id="messageId"></label><br>
+<label>newsfeedId: <input type="text" name="newsfeedId" id="newsfeedId"></label><br>
+<form method="POST" enctype="multipart/form-data" id="form" onsubmit="formSubmit()">
+    <input type="file" name="image"><br>
+    <input type="submit">
+</form>
+<script>
+    'use strict';
+    function formSubmit() {
+        var avatarId = document.getElementById('avatarId').value;
+        var apartmentId = document.getElementById('apartmentId').value;
+        var messageId = document.getElementById('messageId').value;
+        var newsfeedId = document.getElementById('newsfeedId').value;
+        var order = document.getElementById('order').value;
+        var width = document.getElementById('width').value;
+        var height = document.getElementById('height').value;
+        var token = document.getElementById('token').value;
+        var form = document.getElementById('form');
+        var url = `/api/images/upload?avatarId=${avatarId}&apartmentId=${apartmentId}&messageId=${messageId}&newsfeedId=${newsfeedId}&access_token=${token}&order=${order}&width=${width}&height=${height}`;
+        form.setAttribute('action', url);
+    }
+</script>
+</body>
+</html>

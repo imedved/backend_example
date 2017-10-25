@@ -1,0 +1,43 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "newsfeed": {
+      "type": "belongsTo",
+      "model": "newsfeed",
+      "foreignKey": ""
+    },
+    "replyTo": {
+      "type": "belongsTo",
+      "model": "comment",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

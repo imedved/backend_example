@@ -1,0 +1,52 @@
+{
+  "name": "city",
+  "base": "PersistedModel",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "objectId": {
+      "type": "string",
+      "id": true,
+      "required": false,
+      "index": true
+    },
+    "longitude": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": true
+    },
+    "latitude": {
+      "type": "number",
+      "required": true
+    },
+    "photoUrl": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

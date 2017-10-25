@@ -1,0 +1,74 @@
+{
+  "name": "newsfeed",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "eventType": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "userNews",
+        "matchFriends",
+        "updateCity",
+        "updateOption"
+      ],
+      "default": "userNews"
+    },
+    "text": {
+      "type": "string",
+      "required": false
+    },
+    "isMoving": {
+      "type": "boolean",
+      "required": false
+    },
+    "likes": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "foreignKey": ""
+    },
+    "creator": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "matchedUser": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "city": {
+      "type": "belongsTo",
+      "model": "city",
+      "foreignKey": ""
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

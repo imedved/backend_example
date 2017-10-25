@@ -1,0 +1,60 @@
+{
+  "name": "message",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true
+    },
+    "isRead": {
+      "type": "boolean",
+      "required": true,
+      "index": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true
+    },
+    "text": {
+      "type": "string"
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "chat": {
+      "type": "belongsTo",
+      "model": "chat",
+      "foreignKey": ""
+    },
+    "sender": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "receiver": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "attachment": {
+      "type": "hasOne",
+      "model": "image",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

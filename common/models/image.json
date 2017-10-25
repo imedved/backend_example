@@ -1,0 +1,73 @@
+{
+  "name": "image",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bucket": {
+      "type": "string",
+      "required": true
+    },
+    "ETag": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "type": "number",
+      "required": true
+    },
+    "order": {
+      "type": "number",
+      "required": true
+    },
+    "height": {
+      "type": "number",
+      "required": true
+    },
+    "fileId": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "hidden" : ["bucket", "ETag", "fileId"],
+  "validations": [],
+  "relations": {
+    "apartment": {
+      "type": "belongsTo",
+      "model": "apartment",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "newsfeed": {
+      "type": "belongsTo",
+      "model": "newsfeed",
+      "foreignKey": ""
+    },
+    "message": {
+      "type": "belongsTo",
+      "model": "message",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

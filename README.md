@@ -1,0 +1,27 @@
+# backend
+Backend for Circles Application
+
+#### usage
+```
+npm install && npm start
+```
+
+#### required env
+
+CIRCLE_FACEBOOK_CLIENT_ID - string
+CIRCLE_FACEBOOK_CLIENT_SECRET - string
+CIRCLE_DATABASE_CONNECTION_STRING - string
+CIRCLE_S3_BUCKET - string
+CIRCLE_S3_KEY - string
+CIRCLE_S3_SECRET - string
+CIRCLE_CDN_ROUTE - string
+CIRCLE_APP_ENV - string
+CIRCLE_APP_CACHE_TTL - number
+CIRCLE_MEMCACHED_SERVERS - string
+CIRCLE_APP_LOG_LEVEL - string
+CIRCLE_APP_SESSION_SECRET - string
+CIRCLE_APP_SESSION_MAX_AGE - number
+CIRCLE_ACCESS_TOKEN_TTL_VALUE - number
+CIRCLE_ACCESS_TOKEN_TTL_TYPE - string
+CIRCLE_RELATION_UPDATE_PERIOD_VALUE - number
+CIRCLE_RELATION_UPDATE_PERIOD_TYPE - string

@@ -1,0 +1,48 @@
+{
+  "name": "apartment",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "location": {
+      "type": "hasOne",
+      "model": "location",
+      "foreignKey": "",
+      "scope": {
+        "where": {
+          "type": "APARTMENT"
+        }
+      }
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

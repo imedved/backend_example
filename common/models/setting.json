@@ -1,0 +1,50 @@
+{
+  "name": "setting",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "female": {
+      "type": "boolean"
+    },
+    "male": {
+      "type": "boolean"
+    },
+    "upAgeLevel": {
+      "type": "number"
+    },
+    "downAgeLevel": {
+      "type": "number"
+    },
+    "messagesNotification": {
+      "type": "boolean"
+    },
+    "newMatchesNotification": {
+      "type": "boolean"
+    },
+    "newsFeedNotification": {
+      "type": "boolean"
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "modified": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
